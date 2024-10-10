@@ -320,15 +320,10 @@
     transform: translateX(-130%);
     overflow-y: scroll;
     display: flex;
+    background-color: #c50000;
+    padding-bottom: 40px;
     &.show {
       transform: translateX(0);
-    }
-    &-left,
-    &-right {
-      position: static;
-      top: 0;
-      left: 0;
-      height: 100%;
     }
     &-left {
       border-right: 2px solid #ffffff;
@@ -374,6 +369,13 @@
           }
         }
       }
+    }
+    &-left,
+    &-right {
+      position: static;
+      top: 0;
+      left: 0;
+      height: 900px;
     }
     &-content {
       &-search {
