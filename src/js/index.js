@@ -139,15 +139,13 @@ function formSubmit(formValue, formInputsBodyValue, formButtonErrorValue) {
 formSubmit(form, formInputsBody, formButtonError);
 formSubmit(formMobileForm, formMobileInputsBody, formMobileButtonError);
 /*----------------------HEADER----------------------*/
-window.addEventListener("resize", () => {
-  if (window.innerWidth >= 992) {
-    headerMobile.classList.add("hidden");
-    header.classList.remove("hidden");
-  } else {
-    headerMobile.classList.remove("hidden");
-    header.classList.add("hidden");
-  }
-});
+if (window.innerWidth >= 992) {
+  headerMobile.classList.add("hidden");
+  header.classList.remove("hidden");
+} else {
+  headerMobile.classList.remove("hidden");
+  header.classList.add("hidden");
+}
 /*------------------HIDDEN-MOBILE-----------------*/
 function hiddenMobileFunc(element) {
   if (window.innerWidth >= 992) {
@@ -156,15 +154,13 @@ function hiddenMobileFunc(element) {
     element.classList.remove("hidden");
   }
 }
-window.addEventListener("resize", () => {
-  hiddenMobileFunc(bannerMobile);
-  hiddenMobileFunc(formMobile);
-  hiddenMobileFunc(siderbarMobileLogo);
-  hiddenMobileFunc(sidebarMobileClose);
-  hiddenMobileFunc(sidebarMobileSelect);
-  hiddenMobileFunc(siderbarMobileButtonVerify);
-  hiddenMobileFunc(sidebarMobileSocial);
-});
+hiddenMobileFunc(bannerMobile);
+hiddenMobileFunc(formMobile);
+hiddenMobileFunc(siderbarMobileLogo);
+hiddenMobileFunc(sidebarMobileClose);
+hiddenMobileFunc(sidebarMobileSelect);
+hiddenMobileFunc(siderbarMobileButtonVerify);
+hiddenMobileFunc(sidebarMobileSocial);
 /*----------------------BURGER----------------------*/
 burger.addEventListener("click", () => {
   sidebar.classList.toggle("show");
