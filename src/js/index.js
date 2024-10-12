@@ -139,24 +139,32 @@ function formSubmit(formValue, formInputsBodyValue, formButtonErrorValue) {
 formSubmit(form, formInputsBody, formButtonError);
 formSubmit(formMobileForm, formMobileInputsBody, formMobileButtonError);
 /*----------------------HEADER----------------------*/
-if (window.innerWidth >= 992) {
-  headerMobile.classList.add("hidden");
-} else {
-  header.classList.add("hidden");
-}
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 992) {
+    headerMobile.classList.add("hidden");
+    header.classList.remove("hidden");
+  } else {
+    headerMobile.classList.remove("hidden");
+    header.classList.add("hidden");
+  }
+});
 /*------------------HIDDEN-MOBILE-----------------*/
 function hiddenMobileFunc(element) {
   if (window.innerWidth >= 992) {
     element.classList.add("hidden");
+  } else {
+    element.classList.remove("hidden");
   }
 }
-hiddenMobileFunc(bannerMobile);
-hiddenMobileFunc(formMobile);
-hiddenMobileFunc(siderbarMobileLogo);
-hiddenMobileFunc(sidebarMobileClose);
-hiddenMobileFunc(sidebarMobileSelect);
-hiddenMobileFunc(siderbarMobileButtonVerify);
-hiddenMobileFunc(sidebarMobileSocial);
+window.addEventListener("resize", () => {
+  hiddenMobileFunc(bannerMobile);
+  hiddenMobileFunc(formMobile);
+  hiddenMobileFunc(siderbarMobileLogo);
+  hiddenMobileFunc(sidebarMobileClose);
+  hiddenMobileFunc(sidebarMobileSelect);
+  hiddenMobileFunc(siderbarMobileButtonVerify);
+  hiddenMobileFunc(sidebarMobileSocial);
+});
 /*----------------------BURGER----------------------*/
 burger.addEventListener("click", () => {
   sidebar.classList.toggle("show");
