@@ -696,7 +696,14 @@
       }
       .school-items {
         gap: 15px;
-        grid-template-columns: repeat(2, 1fr);
+        .school-item {
+          &-image {
+            padding-right: 5px;
+          }
+          &-subtitle p {
+            font-size: 7px;
+          }
+        }
       }
     }
   }
@@ -758,6 +765,28 @@
   .school {
     padding-top: 50px;
     &-content {
+      .school-items {
+        gap: 10px;
+        .school-item {
+          &-image {
+            padding-right: 5px;
+            img {
+              width: 18px;
+              height: 18px;
+              object-fit: contain;
+            }
+          }
+          &-title {
+            padding-bottom: 2.5px;
+            p {
+              font-size: 7px;
+            }
+          }
+          &-subtitle p {
+            font-size: 4px;
+          }
+        }
+      }
       .school-info {
         padding-top: 40px;
         &-title p {
